@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: internship-discord-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash start.sh
+    envVars:
+      - key: WEBHOOK_URL
+        sync: false
+      - key: DAILY_POST_TIME
+        value: "09:00"
